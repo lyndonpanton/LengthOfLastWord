@@ -1,10 +1,22 @@
 ﻿namespace CSharp
 {
-    internal class Program
+
+    public class Solution
     {
-        static void Main(string[] args)
+
+        public static int LengthOfLastWord(string s)
         {
-            Console.WriteLine("Hello, World!");
+            if (s.IndexOf(" ") != -1)
+            {
+                string trimmed = s.Trim();
+                int lastSpace = trimmed.LastIndexOf(" ");
+
+                return (trimmed.Length - 1) - lastSpace;
+            }
+            else
+            {
+                return s.Length;
+            }
         }
     }
 }
